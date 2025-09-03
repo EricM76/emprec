@@ -1,0 +1,292 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xml:lang="es" lang="es" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta content="noindex,nofollow" name="Robots"/>
+
+<title>EMPREC | Obras y Proyectos</title>
+
+<link href="emprec.css" rel="stylesheet" type="text/css" />
+
+
+
+</head>
+
+
+
+<?php
+
+
+
+$apellido= $_POST['apellido'];
+
+
+
+$nombre= $_POST['nombre'];
+
+
+
+$telefono= $_POST['telefono'];
+
+
+
+$email= $_POST['email'];
+
+
+
+$comentario= $_POST['comentario'];
+
+
+
+
+
+
+
+$destinatario = "adm@emprec.com.ar"; 
+
+
+
+$asunto = "Se ha recibido un nuevo contacto desde la web www.emprec.com.ar"; 
+
+
+
+$cuerpoinicio = '
+
+<html>
+
+<head>
+
+</head>
+
+<body>
+
+<table width="930" border="0" cellpadding="0" cellspacing="0" bgcolor="#000000">
+
+  <tr>
+
+    <td height="126" colspan="3"><div align="center"><img src="http://www.emprec.com.ar/img/logo_emprec.gif" alt="Logo  de la empresa  EMPREC." width="161" height="81"></div></td>
+
+  </tr>
+
+  <tr>
+
+    <td height="5" colspan="3" bgcolor="#000000"></td>
+
+  </tr>
+
+  <tr>
+
+    <td width="50" bgcolor="#1A1A1A"></td>
+
+    <td width="830" bgcolor="#1A1A1A"><br>
+
+      <font color="#FFFFFF" size="2" face="Trebuchet MS">Nombre:';
+
+
+
+$cuerpo1 = '</font><br>
+
+      <font color="#FFFFFF" size="2" face="Trebuchet MS">Apellido:';
+
+
+
+$cuerpo2 = '</font><br>
+
+      <font color="#FFFFFF" size="2" face="Trebuchet MS">Tel&eacute;fono:';
+
+
+
+$cuerpo3 = '</font><br>
+
+      <font color="#FFFFFF" size="2" face="Trebuchet MS">e-mail: ';
+
+
+
+$cuerpo4 = '</font><br>
+
+      <font color="#FFFFFF" size="2" face="Trebuchet MS">Comentario:';
+
+
+
+$cuerpo5 = '</font><br>
+
+      <br> <br>   </td>
+
+    <td width="50" bgcolor="#1A1A1A"></td>
+
+  </tr>
+
+  <tr>
+
+    <td height="5" colspan="3" bgcolor="#000000"></td>
+
+  </tr>
+
+</table>
+
+</body>
+
+</html>';
+
+
+
+
+
+
+
+$cuerpototal = $cuerpoinicio . $nombre . $cuerpo1 . $apellido . $cuerpo2 . $telefono . $cuerpo3 . $email . $cuerpo4 . $comentario . $cuerpo5;
+
+
+
+
+
+
+
+//para el envío en formato HTML 
+
+
+
+$headers = "MIME-Version: 1.0\n"; 
+
+
+
+$headers .= "Content-Type: text/html; charset=iso-8859-1"; 
+
+
+
+//dirección del remitente 
+
+
+
+$headers .= "From: Contacto Web <adm@emprec.com.ar>\\r\\n"; 
+
+
+
+//dirección de respuesta, si queremos que sea distinta que la del remitente 
+
+
+
+$headers .= "Reply-To: adm@emprec.com.ar\\r\\n"; 
+
+
+
+//ruta del mensaje desde origen a destino 
+
+
+
+$headers .= "Return-path: adm@emprec.com.ar\\r\\n"; 
+
+
+
+
+
+
+
+mail($destinatario,$asunto,$cuerpototal,$headers) 
+
+
+
+?>
+
+
+
+<body>
+
+<img src="images/bg.gif" class="bg">
+
+<div id="contenedor">
+
+
+
+<div id="encabezado"><a href="index.html"><img src="img/logo_emprec.gif" alt="Logo EMPREC. Enlaza a p&aacute;gina principal" width="161" height="81" border="0" class="logo" /></a>
+
+<div id="menu">
+
+  <ul>
+
+    <li><a href="obras_bancos.html">obras</a></li>
+
+    <li><a href="proyectos_ejecucion.html">proyectos</a></li>
+
+    <li class="obras_on">contacto</li>
+
+  </ul>
+
+  </div>
+
+</div>
+
+
+
+<div id="datos_contacto">
+
+  <p>Cabildo 4566 - Piso 10<br />
+
+    C1429ABQ - CABA<br /><br />
+
+    TEL 5411 5290-2063<br />	
+
+    FAX	54115290-2064<br /><br />
+
+    e-mail	<a href="mailto:adm@emprec.com.ar">adm@emprec.com.ar</a><br />
+
+    <br />
+
+    Horarios de atenci&oacute;n 9 a 17 hs</p>
+
+</div>
+
+
+
+
+
+ 
+
+<div id="mensaje_ok">
+
+ 
+
+<p>El mensaje se envió satisfactoriamente.
+
+  <br />
+
+  Nos pondremos en contacto a la brevedad. 
+
+  <br />
+
+  Muchas Gracias. </p>
+
+</div>
+
+
+
+
+
+<div id="flash_barritas">
+
+<object type="application/x-shockwave-flash" data="flash/barritas_grises.swf" width="12" height="147">
+
+<param name="movie" value="flash/barritas_grises.swf">
+<param name="quality" value="high">
+<param name="bgcolor" value="#666666">
+
+</object>
+
+</div>
+
+
+
+
+
+<div id="pie"> © 2012 EMPREC | <a href="mailto:adm@emprec.com.ar" title="mail de contacto">adm@emprec.com.ar</a> | TEL. (5411) 5290.2063 / 5290.2064 | <a href="emprec-antecedentes.pdf" title="descargar archivo PDF (2,68 MB)" target="_blank">Descargar Antecedentes</a></div>
+<a href="http://www.alvarezcordeyro.com.ar" target="_blank"><img src="img/logo_disenio.gif" alt="Logotipo del estudio de dise&ntilde;o que realiz&oacute; el sitio. Enlaza a un sitio externo." class="logo_disenio" /></a></div>
+
+
+
+</body>
+
+</html>
+
