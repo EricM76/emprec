@@ -267,6 +267,28 @@ section {
   background-color: #ffffff;
 }
 
+.heading-section {
+  margin-bottom: 3em;
+}
+
+.title-heading-section {
+  margin-bottom:  0px!important;
+}
+
+.title-line-grey{
+      width: 100px;
+      border: 1.8px solid #545255;
+      margin-bottom: 3em;
+      margin-top: 3em;
+}
+
+.title-line-white {
+ width: 100px;
+      border: 1.8px solid #ffffff;
+      margin-bottom: 3em;
+      margin-top: 3em;
+}
+
 /* Panles */
 .panel .table th,
 .panel .table td {
