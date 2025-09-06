@@ -6,3 +6,158 @@
  <link href="css/custom.css" rel="stylesheet">
 
 */
+
+/* Mobile Header Layout - Position header-extras above logo and mainMenu-trigger */
+@media (max-width: 767px) {
+  
+  /* Use CSS Grid to control exact positioning */
+  #header #header-wrap .container-fluid {
+    position: relative !important;
+    display: grid !important;
+    grid-template-areas: 
+      "extras extras extras"
+      "trigger logo logo";
+    grid-template-rows: auto 80px;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    min-height: 80px;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Position header-extras at the top right with smaller elements */
+  #header .header-extras {
+    grid-area: extras !important;
+    position: relative !important;
+    float: none !important;
+    margin: -10px 0 0 0 !important;
+    width: 100% !important;
+    display: flex !important;
+    justify-content: flex-end;
+    z-index: 202;
+    border: none !important;
+    padding: 0 15px !important;
+    height: auto !important;
+    min-height: auto !important;
+  }
+
+  /* Position logo centered with respect to full width */
+  #header #logo {
+    grid-area: logo !important;
+    position: relative !important;
+    width: 100% !important;
+    text-align: center !important;
+    margin: 0 !important;
+    float: none !important;
+    height: 80px !important;
+    left: auto !important;
+    right: auto !important;
+    padding: 0 !important;
+    top: auto !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  /* Position mainMenu-trigger at the bottom left */
+  #header #mainMenu-trigger {
+    grid-area: trigger !important;
+    position: relative !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    z-index: 203;
+    height: 80px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    padding-left: 15px !important;
+  }
+
+  /* Make header-extras elements smaller and adjust spacing */
+  #header .header-extras > ul > li {
+    margin-left: 10px !important;
+  }
+
+  #header .header-extras > ul > li:first-child {
+    margin-left: 0 !important;
+  }
+
+  /* Make images smaller */
+  #header .header-extras > ul > li img {
+    width: 25px !important;
+    height: 25px !important;
+  }
+
+  /* Make button smaller */
+  #header .header-extras .btn {
+    padding: 6px 12px !important;
+    font-size: 12px !important;
+    line-height: 1.2 !important;
+  }
+
+  #header .header-extras .btn img {
+    width: 15px !important;
+    height: 15px !important;
+  }
+
+  /* Override any existing mobile styles that might interfere */
+  #header.header-fullwidth #header-wrap .container .header-extras {
+    border: none !important;
+  }
+
+  /* Remove all padding from header-wrap */
+  #header #header-wrap {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Prevent movement when menu expands - override original mobile styles */
+  #header #mainMenu:not(.menu-overlay) {
+    clear: none !important;
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 1000 !important;
+    background: white !important;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1) !important;
+  }
+
+  #header #mainMenu-trigger {
+    transition: none !important;
+  }
+
+  #header #logo {
+    transition: none !important;
+  }
+
+  /* Align menu items to the left when expanded with tablet-like spacing */
+  #header #mainMenu:not(.menu-overlay) > .container {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    transition: none !important;
+  }
+
+  #header #mainMenu:not(.menu-overlay) nav {
+    text-align: left !important;
+    padding-left: 0 !important;
+    transition: none !important;
+  }
+
+  #header #mainMenu:not(.menu-overlay) nav > ul {
+    text-align: left !important;
+    padding-left: 0 !important;
+    transition: none !important;
+  }
+
+  #header #mainMenu:not(.menu-overlay) nav > ul > li > a {
+    text-align: left !important;
+    padding-left: 0 !important;
+    transition: none !important;
+  }
+
+  /* Ensure header elements stay in place during menu animation */
+  #header #header-wrap .container-fluid {
+    transition: none !important;
+  }
+}
