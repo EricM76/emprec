@@ -476,13 +476,13 @@ h6:not(:last-child),
 
   h2,
   .h2 {
-    font-size: 1.78571429em;
+    font-size: 3em;
     line-height: 1.5em;
   }
 
   h3,
   .h3 {
-    font-size: 1.35714286em;
+    font-size: 2em;
     line-height: 1.85714286em;
   }
 

@@ -366,3 +366,425 @@
     justify-content: flex-start !important;
   }
 }
+
+/* Mobile Footer - Logo left, social icons right */
+@media (max-width: 767px) {
+  #footer .footer-content .container-fluid .row .col-md-2 {
+    position: relative !important;
+    display: flex !important;
+    align-items: center !important;
+    width: 100% !important;
+    min-height: 60px !important;
+  }
+  
+  #footer .footer-content .container-fluid .row .col-md-2 > div {
+    position: relative !important;
+    width: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+  
+  #footer .footer-content .container-fluid .row .col-md-2 img {
+    position: absolute !important;
+    left: 0 !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    width: 120px !important;
+    height: auto !important;
+    margin: 0 !important;
+    z-index: 1 !important;
+  }
+  
+  #footer .footer-content .container-fluid .row .col-md-2 .social-icons {
+    position: absolute !important;
+    right: 5px !important; /* Reduced padding from right edge */
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    float: none !important;
+    margin: 0 !important;
+    z-index: 2 !important;
+    width: auto !important;
+    min-width: 130px !important; /* Ensure enough space for container */
+  }
+  
+  #footer .footer-content .container-fluid .row .col-md-2 .social-icons ul {
+    display: flex !important;
+    justify-content: flex-end !important;
+    align-items: center !important;
+    margin: 0 !important;
+    padding: 0 5px 0 0 !important; /* Add right padding to prevent cutoff */
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    list-style: none !important;
+    width: auto !important;
+    min-width: 120px !important; /* Ensure enough space for 3 icons */
+  }
+  
+  #footer .footer-content .container-fluid .row .col-md-2 .social-icons ul li {
+    margin: 0 6px !important; /* Reduced spacing between icons */
+    display: inline-block !important;
+    vertical-align: middle !important;
+    position: relative !important;
+  }
+  
+  #footer .footer-content .container-fluid .row .col-md-2 .social-icons ul li:last-child {
+    margin-right: 0 !important; /* Remove extra margin */
+  }
+  
+  #footer .footer-content .container-fluid .row .col-md-2 .social-icons ul li img {
+    width: 35px !important;
+    height: 35px !important;
+    margin: 0 !important;
+  }
+  
+  #footer .footer-content .container-fluid .row .col-md-2 .social-icons ul li a {
+    width: auto !important;
+    height: auto !important;
+    display: inline-block !important;
+  }
+  
+  /* Mobile Footer - Equal vertical spacing for all sections */
+  #footer .footer-content .container-fluid .row .col-md-4,
+  #footer .footer-content .container-fluid .row .col-md-3 {
+    margin-top: 30px !important;
+    margin-bottom: 30px !important;
+  }
+}
+
+/* Tablet Footer - Position social-icons below logo at 768px with left alignment */
+@media (min-width: 768px) and (max-width: 991px) {
+  #footer .footer-content .container-fluid .row .col-md-2 {
+    position: relative !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    width: 100% !important;
+    min-height: 80px !important;
+  }
+  
+  #footer .footer-content .container-fluid .row .col-md-2 > div {
+    position: relative !important;
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+  
+  #footer .footer-content .container-fluid .row .col-md-2 img {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    transform: none !important;
+    width: 120px !important;
+    height: auto !important;
+    margin: 0 0 20px 0 !important;
+    z-index: 1 !important;
+  }
+  
+  #footer .footer-content .container-fluid .row .col-md-2 .social-icons {
+    position: relative !important;
+    right: auto !important;
+    top: auto !important;
+    transform: none !important;
+    float: none !important;
+    margin: 0 !important;
+    z-index: 2 !important;
+  }
+  
+  #footer .footer-content .container-fluid .row .col-md-2 .social-icons ul {
+    display: flex !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    list-style: none !important;
+  }
+  
+  #footer .footer-content .container-fluid .row .col-md-2 .social-icons ul li {
+    margin: 0 8px !important;
+    display: inline-block !important;
+    vertical-align: middle !important;
+    position: relative !important;
+  }
+  
+  #footer .footer-content .container-fluid .row .col-md-2 .social-icons ul li:last-child {
+    margin-right: 8px !important; /* Add margin to prevent cutoff */
+  }
+  
+  #footer .footer-content .container-fluid .row .col-md-2 .social-icons ul li img {
+    width: 35px !important;
+    height: 35px !important;
+    margin: 0 !important;
+  }
+  
+  #footer .footer-content .container-fluid .row .col-md-2 .social-icons ul li a {
+    width: auto !important;
+    height: auto !important;
+    display: inline-block !important;
+  }
+  
+  /* Tablet Footer - Reorganize layout at 768px */
+  #footer .footer-content .container-fluid .row {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    grid-template-rows: auto auto !important;
+    grid-template-areas: 
+      "logo-social direcciones"
+      "mapa institucional" !important;
+    gap: 20px !important;
+    align-items: start !important;
+  }
+  
+  #footer .footer-content .container-fluid .row .col-md-2 {
+    grid-area: logo-social !important;
+  }
+  
+  #footer .footer-content .container-fluid .row .col-md-3:nth-child(3) {
+    grid-area: mapa !important;
+  }
+  
+  #footer .footer-content .container-fluid .row .col-md-4 {
+    grid-area: direcciones !important;
+  }
+  
+  #footer .footer-content .container-fluid .row .col-md-3:nth-child(4) {
+    grid-area: institucional !important;
+  }
+  
+  /* Tablet Footer - Apply contact section padding */
+  #footer .footer-content {
+    padding-top: 40px !important;
+    padding-left: 40px !important;
+    padding-right: 40px !important;
+    padding-bottom: 40px !important;
+  }
+  
+  /* Tablet Footer - Optimize content layout */
+  #footer .footer-content .container-fluid .row .col-md-2,
+  #footer .footer-content .container-fluid .row .col-md-3,
+  #footer .footer-content .container-fluid .row .col-md-4 {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+    min-height: auto !important;
+    width: 100% !important;
+  }
+  
+  /* Tablet Footer - Make directions content full width */
+  #footer .footer-content .container-fluid .row .col-md-4 .widget {
+    width: 100% !important;
+  }
+  
+  #footer .footer-content .container-fluid .row .col-md-4 h4 {
+    width: 100% !important;
+    margin-bottom: 15px !important;
+    font-size: 1.1em !important;
+  }
+  
+  #footer .footer-content .container-fluid .row .col-md-4 ul {
+    width: 100% !important;
+    margin-bottom: 0 !important;
+  }
+  
+  #footer .footer-content .container-fluid .row .col-md-4 ul li {
+    width: 100% !important;
+    margin-bottom: 8px !important;
+    line-height: 1.4 !important;
+  }
+  
+  /* Tablet Footer - Optimize other content */
+  #footer .footer-content .container-fluid .row .col-md-3 h4 {
+    margin-bottom: 15px !important;
+    font-size: 1.1em !important;
+  }
+  
+  #footer .footer-content .container-fluid .row .col-md-3 ul {
+    margin-bottom: 0 !important;
+  }
+  
+  #footer .footer-content .container-fluid .row .col-md-3 ul li {
+    margin-bottom: 8px !important;
+    line-height: 1.4 !important;
+  }
+}
+
+/* Mobile Footer - Apply contact section padding */
+@media (max-width: 767px) {
+  #footer .footer-content {
+    padding-top: 20px !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    padding-bottom: 20px !important;
+  }
+}
+
+/* Desktop Footer - 4 columns layout with logo/redes vertical in first column */
+@media (min-width: 1024px) {
+  #footer .footer-content .container-fluid .row {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    align-items: flex-start !important;
+    gap: 20px !important;
+  }
+  
+  #footer .footer-content .container-fluid .row .col-md-2 {
+    flex: 0 0 auto !important;
+    width: auto !important;
+    min-width: 200px !important;
+    position: relative !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+  
+  #footer .footer-content .container-fluid .row .col-md-4 {
+    flex: 1 !important;
+    width: auto !important;
+  }
+  
+  #footer .footer-content .container-fluid .row .col-md-3 {
+    flex: 1 !important;
+    width: auto !important;
+  }
+  
+  #footer .footer-content .container-fluid .row .col-md-2 > div {
+    position: relative !important;
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+  
+  #footer .footer-content .container-fluid .row .col-md-2 img {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    transform: none !important;
+    width: 120px !important;
+    height: auto !important;
+    margin: 0 0 20px 0 !important;
+    z-index: 1 !important;
+  }
+  
+  #footer .footer-content .container-fluid .row .col-md-2 .social-icons {
+    position: relative !important;
+    right: auto !important;
+    top: auto !important;
+    transform: none !important;
+    float: none !important;
+    margin: 0 !important;
+    z-index: 2 !important;
+    width: auto !important;
+    min-width: auto !important;
+  }
+  
+  #footer .footer-content .container-fluid .row .col-md-2 .social-icons ul {
+    display: flex !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    list-style: none !important;
+    width: auto !important;
+    min-width: auto !important;
+  }
+  
+  #footer .footer-content .container-fluid .row .col-md-2 .social-icons ul li {
+    margin: 0 8px !important;
+    display: inline-block !important;
+    vertical-align: middle !important;
+    position: relative !important;
+  }
+  
+  #footer .footer-content .container-fluid .row .col-md-2 .social-icons ul li:last-child {
+    margin-right: 0 !important;
+  }
+  
+  #footer .footer-content .container-fluid .row .col-md-2 .social-icons ul li img {
+    width: 35px !important;
+    height: 35px !important;
+    margin: 0 !important;
+  }
+  
+  #footer .footer-content .container-fluid .row .col-md-2 .social-icons ul li a {
+    width: auto !important;
+    height: auto !important;
+    display: inline-block !important;
+  }
+}
+
+/* Desktop Header - Optimize menu layout at 1024px */
+@media (min-width: 1024px) {
+  /* Reduce logo width */
+  #header #logo img {
+    width: 80px !important;
+    height: auto !important;
+  }
+  
+  /* Reduce spacing between menu items */
+  #header #mainMenu nav > ul > li {
+    margin-left: 15px !important;
+    margin-right: 15px !important;
+  }
+  
+  #header #mainMenu nav > ul > li:first-child {
+    margin-left: 0 !important;
+  }
+  
+  #header #mainMenu nav > ul > li:last-child {
+    margin-right: 0 !important;
+  }
+  
+  /* Reduce font size of menu items */
+  #header #mainMenu nav > ul > li > a {
+    font-size: 14px !important;
+    padding: 10px 8px !important;
+  }
+  
+  /* Ensure header elements are properly spaced */
+  #header #header-wrap .container-fluid {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+  }
+  
+  /* Order elements: logo (1), menu (2), header-extras (3) */
+  #header #logo {
+    order: 1 !important;
+    margin-right: 20px !important;
+  }
+  
+  #header #mainMenu {
+    order: 2 !important;
+    margin-right: 20px !important;
+  }
+  
+  #header .header-extras {
+    order: 3 !important;
+    margin-left: auto !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 15px !important;
+  }
+  
+  /* Ensure social icons and button are aligned horizontally */
+  #header .header-extras > ul {
+    display: flex !important;
+    align-items: center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  
+  #header .header-extras > ul > li {
+    margin: 0 8px !important;
+  }
+  
+  #header .header-extras > ul > li:last-child {
+    margin-right: 0 !important;
+  }
+}
