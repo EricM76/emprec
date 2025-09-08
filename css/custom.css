@@ -720,71 +720,147 @@
 
 /* Desktop Header - Optimize menu layout at 1024px */
 @media (min-width: 1024px) {
-  /* Reduce logo width */
+  /* Reduce logo size by 20% */
   #header #logo img {
-    width: 80px !important;
-    height: auto !important;
+    width: auto !important;
+    height: 64px !important; /* 80px - 20% = 64px */
   }
   
-  /* Reduce spacing between menu items */
+  /* Very compact spacing between menu items */
   #header #mainMenu nav > ul > li {
-    margin-left: 15px !important;
-    margin-right: 15px !important;
+    margin-left: 4px !important;
+    margin-right: 4px !important;
   }
   
   #header #mainMenu nav > ul > li:first-child {
-    margin-left: 0 !important;
+    margin-left: 8px !important; /* Space from logo */
   }
   
   #header #mainMenu nav > ul > li:last-child {
-    margin-right: 0 !important;
+    margin-right: 8px !important; /* Space to social buttons */
   }
   
-  /* Reduce font size of menu items */
+  /* Reduce font size and padding of menu items */
   #header #mainMenu nav > ul > li > a {
-    font-size: 14px !important;
-    padding: 10px 8px !important;
+    font-size: 13px !important;
+    padding: 4px 2px !important;
+    text-transform: uppercase !important;
   }
   
   /* Ensure header elements are properly spaced */
   #header #header-wrap .container-fluid {
     display: flex !important;
     align-items: center !important;
-    justify-content: flex-start !important;
+    justify-content: space-evenly !important;
+    position: relative !important;
   }
   
   /* Order elements: logo (1), menu (2), header-extras (3) */
   #header #logo {
     order: 1 !important;
-    margin-right: 20px !important;
+    flex-shrink: 0 !important;
   }
   
   #header #mainMenu {
     order: 2 !important;
-    margin-right: 20px !important;
+    flex: 1 !important;
+    display: flex !important;
+    justify-content: center !important;
   }
   
-  #header .header-extras {
-    order: 3 !important;
-    margin-left: auto !important;
-    display: flex !important;
-    align-items: center !important;
-    gap: 15px !important;
+  /* Force header-extras to be visible and positioned correctly */
+  #header #header-wrap .header-extras {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    position: absolute !important;
+    right: 40px !important; /* More margin from edge to avoid overlap */
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    z-index: 999 !important;
+    width: auto !important;
+    height: auto !important;
   }
   
-  /* Ensure social icons and button are aligned horizontally */
-  #header .header-extras > ul {
+  /* Force the ul list to be visible */
+  #header #header-wrap .header-extras > ul {
     display: flex !important;
     align-items: center !important;
+    opacity: 1 !important;
+    visibility: visible !important;
     margin: 0 !important;
     padding: 0 !important;
+    list-style: none !important;
   }
   
-  #header .header-extras > ul > li {
-    margin: 0 8px !important;
+  /* Force list items to be visible */
+  #header #header-wrap .header-extras > ul > li {
+    display: inline-block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    margin-left: 8px !important; /* Reduced spacing between social icons */
+    border: 0 !important;
   }
   
-  #header .header-extras > ul > li:last-child {
-    margin-right: 0 !important;
+  #header #header-wrap .header-extras > ul > li:first-child {
+    margin-left: 0 !important;
+  }
+  
+  /* Force images to be visible */
+  #header #header-wrap .header-extras > ul > li img {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    width: 25px !important;
+    height: 25px !important;
+  }
+  
+  /* Force links to be visible */
+  #header #header-wrap .header-extras > ul > li > a {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+  
+  /* Adjust brochure button height to match social icons */
+  #header #header-wrap .header-extras .btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    padding: 8px 8px !important; /* More vertical padding */
+    font-size: 11px !important;
+    line-height: 1.2 !important;
+    height: auto !important; /* Allow natural height */
+    vertical-align: middle !important;
+    gap: 4px !important; /* Space between icon and text */
+  }
+  
+  /* Ensure icon and text are aligned in brochure button */
+  #header #header-wrap .header-extras .btn i,
+  #header #header-wrap .header-extras .btn img {
+    vertical-align: middle !important;
+    margin: 0 !important;
+    width: 16px !important; /* Smaller icon */
+    height: 16px !important; /* Smaller icon */
+  }
+}
+
+/* Large Desktop - Increase font size at 1440px+ */
+@media (min-width: 1440px) {
+  /* Increase font size of menu items */
+  #header #mainMenu nav > ul > li > a {
+    font-size: 18px !important;
+    padding: 10px 8px !important;
+    text-transform: uppercase !important;
+  }
+  
+  /* Larger social icons */
+  #header #header-wrap .header-extras > ul > li img {
+    width: 30px !important;
+    height: 30px !important;
+  }
+  
+  /* More lateral padding for brochure button */
+  #header #header-wrap .header-extras .btn {
+    padding: 8px 12px !important;
   }
 }
