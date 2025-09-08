@@ -864,3 +864,24 @@
     padding: 8px 12px !important;
   }
 }
+
+/* Footer Typography - Nunito Sans for all resolutions */
+#footer,
+#footer * {
+  font-family: 'Nunito Sans', sans-serif !important;
+}
+
+/* Specific footer elements */
+#footer h1,
+#footer h2,
+#footer h3,
+#footer h4,
+#footer h5,
+#footer h6,
+#footer p,
+#footer a,
+#footer li,
+#footer span,
+#footer div {
+  font-family: 'Nunito Sans', sans-serif !important;
+}
