@@ -1000,3 +1000,34 @@ svg .cls-1 {
   fill: transparent !important;
   stroke: #d4191e !important;
 }
+
+/* Equal height testimonial boxes in desktop */
+@media (min-width: 1024px) {
+  .grid-layout.grid-3-columns.testimonial {
+    display: flex !important;
+    align-items: stretch !important;
+    flex-wrap: nowrap !important;
+  }
+  
+  .grid-layout.grid-3-columns.testimonial .grid-item {
+    display: flex !important;
+    flex-direction: column !important;
+    flex: 1 1 33.333% !important;
+    width: 33.333% !important;
+    min-height: 100% !important;
+  }
+  
+  .grid-layout.grid-3-columns.testimonial .testimonial-item {
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100% !important;
+    min-height: 100% !important;
+    justify-content: flex-start !important;
+    flex-grow: 1 !important;
+  }
+  
+  .grid-layout.grid-3-columns.testimonial .testimonial-item p {
+    flex-grow: 1 !important;
+    margin-bottom: 20px !important;
+  }
+}
