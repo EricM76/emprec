@@ -988,3 +988,15 @@ p.lead.m-b-60 {
   font-weight: 500 !important;
   text-transform: uppercase !important;
 }
+
+/* SVG circle with transparent image */
+svg {
+  background-color: white !important;
+  border-radius: 50% !important;
+  padding: 10px !important;
+}
+
+svg .cls-1 {
+  fill: transparent !important;
+  stroke: #d4191e !important;
+}
