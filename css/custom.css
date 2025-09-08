@@ -935,6 +935,10 @@ section#contacto h2 {
   text-transform: uppercase !important;
 }
 
+section#contacto2 h2 {
+  text-transform: uppercase !important;
+}
+
 /* Uppercase for texts below section titles */
 p.lead.m-b-60 {
   text-transform: uppercase !important;
