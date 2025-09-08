@@ -353,7 +353,7 @@
   
   section.box-fancy.section-fullwidth .row .col-lg-3 h3 {
     flex-shrink: 0 !important;
-    margin-bottom: 60px !important; /* Doubled from 30px to 60px */
+    margin-bottom: 30px !important; /* Same as number margin-bottom */
     margin-top: 0 !important;
   }
   
