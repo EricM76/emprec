@@ -939,6 +939,19 @@ section#contacto2 h2 {
   text-transform: uppercase !important;
 }
 
+/* Same size as Contacto title */
+h3[style*="color: #d4191e"] {
+  font-size: 33px !important;
+  font-weight: 900 !important;
+  text-transform: uppercase !important;
+}
+
+.title-heading-section {
+  font-size: 33px !important;
+  font-weight: 900 !important;
+  text-transform: uppercase !important;
+}
+
 /* Uppercase for texts below section titles */
 p.lead.m-b-60 {
   text-transform: uppercase !important;
