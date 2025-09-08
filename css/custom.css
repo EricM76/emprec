@@ -1046,3 +1046,244 @@ svg .cls-1 {
     margin-bottom: 20px !important;
   }
 }
+
+/* Corporate Policies Section Styles */
+#politicas {
+  background-color: #f8f9fa !important;
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* Desktop: 2x2 grid layout */
+@media (min-width: 1024px) {
+  #politicas .row {
+    margin: 0 auto !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-items: stretch !important;
+  }
+  
+  #politicas .col-lg-6 {
+    margin-bottom: 0 !important;
+    padding: 0 !important;
+    display: flex !important;
+    align-items: stretch !important;
+  }
+  
+  #politicas .col-lg-6:nth-child(1),
+  #politicas .col-lg-6:nth-child(2) {
+    margin-bottom: 0 !important;
+  }
+  
+  #politicas .col-lg-6:nth-child(3),
+  #politicas .col-lg-6:nth-child(4) {
+    margin-bottom: 0 !important;
+  }
+}
+
+.policy-item {
+  background-color: white !important;
+  padding: 72px 60px !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  height: 100% !important;
+  min-height: 500px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  border: none !important;
+  text-align: left !important;
+  width: 100% !important;
+}
+
+.policy-item:hover {
+  background-color: #f8f9fa !important;
+}
+
+/* Background color for specific policy items */
+#politicas .col-lg-6:nth-child(1) .policy-item,
+#politicas .col-lg-6:nth-child(4) .policy-item {
+  background-color: #efefef !important;
+}
+
+#politicas .col-lg-6:nth-child(2) .policy-item,
+#politicas .col-lg-6:nth-child(3) .policy-item {
+  background-color: #c8c8c8 !important;
+}
+
+#politicas .col-lg-6:nth-child(1) .policy-item:hover,
+#politicas .col-lg-6:nth-child(4) .policy-item:hover {
+  background-color: #e0e0e0 !important;
+}
+
+/* Altura reducida para la última caja */
+#politicas .col-lg-6:nth-child(4) .policy-item {
+  min-height: 250px !important;
+  padding: 72px 60px !important;
+}
+
+#politicas .col-lg-6:nth-child(2) .policy-item:hover,
+#politicas .col-lg-6:nth-child(3) .policy-item:hover {
+  background-color: #b5b5b5 !important;
+}
+
+/* Estilo para la sección del brochure */
+.brochure-section {
+  background-color: #d4191e !important;
+  padding: 30px !important;
+  margin: 0 !important;
+  margin-bottom: 0 !important;
+  border-radius: 0 !important;
+  width: 100% !important;
+}
+
+.brochure-section {
+  text-align: center !important;
+}
+
+.brochure-section p {
+  color: white !important;
+  margin-bottom: 15px !important;
+  font-size: 1.92em !important;
+  font-weight: bold !important;
+  line-height: 1.3 !important;
+}
+
+.brochure-section a {
+  color: #545255 !important;
+  text-decoration: none !important;
+  font-weight: 800 !important;
+  font-size: 1.5em !important;
+  background-color: #efefef !important;
+  padding: 8px 24px !important;
+  border-radius: 1rem !important;
+  display: inline-block !important;
+  transition: all 0.3s ease !important;
+  border: 1px solid #efefef !important;
+  width: 200px !important;
+}
+
+.brochure-section a:hover {
+  background-color: #e0e0e0 !important;
+  border-color: #e0e0e0 !important;
+  color: #545255 !important;
+}
+
+.policy-icon {
+  margin-bottom: 25px !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+.policy-title {
+  color: #d4191e !important;
+  font-size: 1.6em !important;
+  font-weight: 600 !important;
+  margin-bottom: 20px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+  line-height: 1.3 !important;
+  text-align: center !important;
+}
+
+.policy-text {
+  color: #666 !important;
+  font-size: 1.2em !important;
+  line-height: 1.6 !important;
+  margin-top: 20px !important;
+  margin-bottom: 0 !important;
+  flex-grow: 1 !important;
+  display: flex !important;
+  align-items: flex-start !important;
+}
+
+/* Responsive adjustments for policies */
+@media (max-width: 991px) {
+  #politicas .container {
+    max-width: 100% !important;
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  
+  #politicas .row {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  
+  #politicas .col-lg-6 {
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  
+  .policy-item {
+    padding: 60px 48px !important;
+    margin-bottom: 0 !important;
+    min-height: 450px !important;
+  }
+  
+  /* Colores para tablet: cajas 1 y 3 claras, cajas 2 y 4 oscuras */
+  #politicas .col-lg-6:nth-child(1) .policy-item,
+  #politicas .col-lg-6:nth-child(3) .policy-item {
+    background-color: #efefef !important;
+  }
+  
+  #politicas .col-lg-6:nth-child(2) .policy-item,
+  #politicas .col-lg-6:nth-child(4) .policy-item {
+    background-color: #c8c8c8 !important;
+  }
+  
+  .policy-title {
+    font-size: 1.5em !important;
+  }
+  
+  .policy-text {
+    font-size: 1.15em !important;
+  }
+  
+  /* Altura reducida para la última caja en tablet */
+  #politicas .col-lg-6:nth-child(4) .policy-item {
+    min-height: 225px !important;
+    padding: 60px 48px !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .policy-item {
+    padding: 54px 42px !important;
+    margin-bottom: 0 !important;
+    min-height: 400px !important;
+  }
+  
+  /* Colores para mobile: cajas 1 y 3 claras, cajas 2 y 4 oscuras */
+  #politicas .col-lg-6:nth-child(1) .policy-item,
+  #politicas .col-lg-6:nth-child(3) .policy-item {
+    background-color: #efefef !important;
+  }
+  
+  #politicas .col-lg-6:nth-child(2) .policy-item,
+  #politicas .col-lg-6:nth-child(4) .policy-item {
+    background-color: #c8c8c8 !important;
+  }
+  
+  .policy-icon svg {
+    width: 60px !important;
+    height: 60px !important;
+  }
+  
+  .policy-title {
+    font-size: 1.4em !important;
+    margin-bottom: 15px !important;
+  }
+  
+  .policy-text {
+    font-size: 1.1em !important;
+  }
+  
+  /* Altura reducida para la última caja en mobile */
+  #politicas .col-lg-6:nth-child(4) .policy-item {
+    min-height: 200px !important;
+    padding: 54px 42px !important;
+  }
+}
