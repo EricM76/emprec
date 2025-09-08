@@ -1047,6 +1047,17 @@ svg .cls-1 {
   }
 }
 
+/* Texto con primera letra en mayúscula para secciones específicas */
+#clientes .lead,
+#obras .lead {
+  text-transform: lowercase !important;
+}
+
+#clientes .lead::first-letter,
+#obras .lead::first-letter {
+  text-transform: uppercase !important;
+}
+
 /* Corporate Policies Section Styles */
 #politicas {
   background-color: #f8f9fa !important;
