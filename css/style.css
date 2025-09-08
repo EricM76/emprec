@@ -15475,7 +15475,7 @@ body.device-xxs .text-medium-light {
   .text-lg,
   .text-lg span {
     font-size: 30px !important;
-    line-height: 30px !important;
+    /* line-height: 30px !important; */
   }
 
   .text-lg-x2,

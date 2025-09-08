@@ -212,7 +212,7 @@
     float: none !important;
     clear: both !important;
     margin: 0 !important;
-    padding: 5% !important;
+    padding: 5% 5% !important; /* Explicit top/bottom padding */
   }
 }
 
@@ -347,7 +347,7 @@
   
   section.box-fancy.section-fullwidth .row .col-lg-3 h2 {
     flex-shrink: 0 !important;
-    margin-bottom: 60px !important; /* Doubled from 30px to 60px */
+    margin-bottom: 30px !important; /* Reduced from 60px to 30px */
     margin-top: 0 !important;
   }
   
@@ -922,5 +922,69 @@ section#contacto h2 {
 
 /* Uppercase for texts below section titles */
 p.lead.m-b-60 {
+  text-transform: uppercase !important;
+}
+
+/* Reduce spacing between number and title in gray boxes */
+.box-fancy .col-lg-3 h2 + h3 {
+  margin-top: -1em !important; /* Much more aggressive negative margin */
+}
+
+/* Responsive font size for numbers in gray boxes */
+.box-fancy .col-lg-3 h2.text-lg {
+  font-size: 40px !important; /* Mobile default */
+}
+
+@media (min-width: 768px) {
+  .box-fancy .col-lg-3 h2.text-lg {
+    font-size: 80px !important; /* Tablet */
+  }
+  
+  .box-fancy .col-lg-3 h3 {
+    font-size: 1.78571429em !important; /* Tablet title size */
+  }
+  
+  /* Same padding as mobile - multiple selectors for 768px */
+  section.box-fancy.section-fullwidth .row .col-lg-3 {
+    padding: 5% !important; /* Same as mobile - more specific selector */
+  }
+  
+  .box-fancy [class*="col-"] {
+    padding: 5% !important; /* Override theme default */
+  }
+  
+  /* Consistent spacing between elements in gray boxes */
+  .box-fancy .col-lg-3 h2 + h3 {
+    margin-top: -1em !important; /* Same spacing as mobile */
+  }
+  
+  .box-fancy .col-lg-3 h3 + p {
+    margin-top: 1em !important; /* Consistent spacing to paragraph */
+  }
+}
+
+@media (min-width: 1024px) {
+  .box-fancy .col-lg-3 h2.text-lg {
+    font-size: 90px !important; /* Desktop */
+  }
+  
+  /* Same padding as mobile */
+  section.box-fancy.section-fullwidth .row .col-lg-3 {
+    padding: 15% !important; /* Same as mobile - more specific selector */
+  }
+  
+  /* Consistent spacing between elements in gray boxes */
+  .box-fancy .col-lg-3 h2 + h3 {
+    margin-top: -0.3em !important; /* Less aggressive spacing for desktop */
+  }
+  
+  .box-fancy .col-lg-3 h3 + p {
+    margin-top: 1em !important; /* Consistent spacing to paragraph */
+  }
+}
+
+/* Style for titles in gray boxes */
+.box-fancy .col-lg-3 h3 {
+  font-weight: 500 !important;
   text-transform: uppercase !important;
 }
