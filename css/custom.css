@@ -1184,6 +1184,240 @@ body section#page-content .container-fluid .row .col-lg-7 .text-content h3 {
   text-transform: uppercase !important;
 }
 
+/* Mobile menu - Add social icons and brochure button inside menu */
+@media (max-width: 991px) {
+  /* Hide desktop navigation wrapper on mobile */
+  #header .desktop-nav-wrapper {
+    display: none !important;
+  }
+  
+  /* Set logo height to 50px on mobile */
+  #header #logo img {
+    height: 50px !important;
+    width: auto !important;
+  }
+  
+  /* Remove line-height for logo link */
+  #header #logo a {
+    line-height: 0 !important;
+  }
+  
+  /* Hide desktop header extras on mobile */
+  .header-extras {
+    display: none !important;
+  }
+  
+  /* Hide header extras in all mobile views */
+  #header .header-extras {
+    display: none !important;
+  }
+  
+  /* Hide any mobile menu extras outside the main menu */
+  .mobile-menu-extras {
+    display: none !important;
+  }
+  
+  /* Show mobile menu extras only inside the main menu */
+  #mainMenu .mobile-menu-extras {
+    display: block !important;
+    text-align: left !important;
+    padding: 20px 15px 20px 0 !important;
+    border-top: none !important;
+    margin-top: 10px !important;
+    background-color: transparent !important;
+  }
+  
+  /* Style mobile menu extras to match original header-extras */
+  #mainMenu .mobile-menu-extras ul {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: flex !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+    gap: 15px !important;
+  }
+  
+  #mainMenu .mobile-menu-extras ul li {
+    display: flex !important;
+    align-items: center !important;
+    margin: 0 !important;
+  }
+  
+  #mainMenu .mobile-menu-extras ul li a {
+    display: flex !important;
+    align-items: center !important;
+    text-decoration: none !important;
+  }
+  
+  #mainMenu .mobile-menu-extras ul li a img {
+    width: 35px !important;
+    height: 35px !important;
+    display: block !important;
+  }
+  
+  #mainMenu .mobile-menu-extras ul li button.btn-rounded {
+    background-color: #d4191e !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 25px !important;
+    padding: 8px 16px !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    cursor: pointer !important;
+    transition: background-color 0.3s ease !important;
+    height: 35px !important;
+    min-height: 35px !important;
+  }
+  
+  #mainMenu .mobile-menu-extras ul li button.btn-rounded:hover {
+    background-color: #b0151a !important;
+  }
+  
+  #mainMenu .mobile-menu-extras ul li button.btn-rounded img {
+    width: 20px !important;
+    height: 20px !important;
+  }
+  
+  /* Add margin-top to brochure button in mobile and tablet */
+  #mainMenu .mobile-menu-extras ul li button.btn-rounded {
+    margin-top: 6px !important;
+  }
+  
+}
+
+/* Desktop - Hide mobile menu extras */
+@media (min-width: 992px) {
+  .mobile-menu-extras {
+    display: none !important;
+  }
+  
+  /* Remove margin-top from brochure button in desktop */
+  #header .header-extras ul li .btn {
+    margin-top: 0 !important;
+  }
+  
+  /* Layout: Logo left, Desktop nav wrapper right */
+  #header .container-fluid {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    flex-wrap: nowrap !important;
+    height: 100% !important;
+  }
+  
+  /* Logo first (left) */
+  #header #logo {
+    order: 1 !important;
+    flex-shrink: 0 !important;
+  }
+  
+  /* Desktop navigation wrapper - groups menu and social icons */
+  #header .desktop-nav-wrapper {
+    order: 2 !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 0 !important;
+    flex-shrink: 0 !important;
+    margin-left: auto !important;
+    margin-right: -50px !important;
+  }
+  
+  /* Menu inside wrapper */
+  #header .desktop-nav-wrapper #mainMenu {
+    position: static !important;
+    transform: none !important;
+    background: none !important;
+    box-shadow: none !important;
+    border: none !important;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+    align-self: center !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+  
+  #header .desktop-nav-wrapper #mainMenu .container {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  
+  #header .desktop-nav-wrapper #mainMenu nav ul {
+    display: flex !important;
+    align-items: center !important;
+    gap: 15px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+}
+
+/* Extra large screens - reduce gap further */
+@media (min-width: 1440px) {
+  #header .desktop-nav-wrapper #mainMenu nav ul {
+    gap: 2px !important;
+  }
+  
+  /* Push menu to the right to get closer to social icons */
+  #mainMenu.menu-left nav {
+    margin-left: 130px !important;
+  }
+}
+
+/* Ultra large screens - minimal gap */
+@media (min-width: 1920px) {
+  #header .desktop-nav-wrapper #mainMenu nav ul {
+    gap: 0px !important;
+  }
+  
+  #header .desktop-nav-wrapper #mainMenu nav ul li a {
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    color: #333 !important;
+    text-decoration: none !important;
+    white-space: nowrap !important;
+  }
+  
+  #header .desktop-nav-wrapper #mainMenu nav ul li a:hover {
+    color: #d4191e !important;
+  }
+  
+  /* Social icons inside wrapper - now truly siblings with menu */
+  #header .desktop-nav-wrapper .header-extras {
+    flex-shrink: 0 !important;
+    margin-left: 0 !important;
+    display: flex !important;
+    align-items: flex-start !important;
+    padding-top: 0 !important;
+    margin-top: -20px !important;
+  }
+  
+  #header .desktop-nav-wrapper .header-extras ul {
+    display: flex !important;
+    align-items: center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    margin-top: 0 !important;
+  }
+  
+  #header .desktop-nav-wrapper .header-extras ul li {
+    display: flex !important;
+    align-items: center !important;
+    margin: 0 !important;
+  }
+  
+  /* Force social icons to align with menu */
+  #header .desktop-nav-wrapper .header-extras ul li a,
+  #header .desktop-nav-wrapper .header-extras ul li button {
+    vertical-align: top !important;
+    margin-top: -10px !important;
+  }
+}
+
 /* Footer Typography - Nunito Sans for all resolutions */
 #footer,
 #footer * {
