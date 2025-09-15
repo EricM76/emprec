@@ -1212,6 +1212,27 @@ body section#page-content .container-fluid .row .col-lg-7 .text-content h3 {
     display: none !important;
   }
   
+  /* Fix footer social icons spacing on mobile */
+  #footer .social-icons ul {
+    display: flex !important;
+    gap: 20px !important;
+    justify-content: center !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+  }
+  
+  #footer .social-icons ul li {
+    margin: 0 8px !important;
+    padding: 0 !important;
+    flex-shrink: 0 !important;
+    width: auto !important;
+  }
+  
+  #footer .social-icons ul li a {
+    display: block !important;
+    padding: 5px !important;
+  }
+  
   /* Hide any mobile menu extras outside the main menu */
   .mobile-menu-extras {
     display: none !important;
@@ -1271,6 +1292,7 @@ body section#page-content .container-fluid .row .col-lg-7 .text-content h3 {
     transition: background-color 0.3s ease !important;
     height: 35px !important;
     min-height: 35px !important;
+    margin-top: 6px !important;
   }
   
   #mainMenu .mobile-menu-extras ul li button.btn-rounded:hover {
@@ -1281,13 +1303,19 @@ body section#page-content .container-fluid .row .col-lg-7 .text-content h3 {
     width: 20px !important;
     height: 20px !important;
   }
-  
-  /* Add margin-top to brochure button in mobile and tablet */
-  #mainMenu .mobile-menu-extras ul li button.btn-rounded {
-    margin-top: 6px !important;
+}
+
+/* Tablet specific - reduce spacing for footer social icons */
+@media (min-width: 768px) and (max-width: 991px) {
+  #footer .social-icons ul {
+    gap: 2px !important;
   }
   
+  #footer .social-icons ul li {
+    margin: 0 !important;
+  }
 }
+
 
 /* Desktop - Hide mobile menu extras */
 @media (min-width: 992px) {
