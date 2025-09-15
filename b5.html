@@ -465,6 +465,44 @@
         });
       });
     </script>
+    <script>
+      $(document).ready(function() {
+        // Mobile menu toggle
+        $("#mainMenu-trigger").on("click", function() {
+          $("#mainMenu").slideToggle();
+          $(this).toggleClass("active");
+        });
+        
+        // Close mobile menu when clicking on a link
+        $("#mainMenu a").on("click", function() {
+          if ($(window).width() <= 991) {
+            $("#mainMenu").slideUp();
+            $("#mainMenu-trigger").removeClass("active");
+          }
+        });
+        
+        // Close mobile menu when clicking outside
+        $(document).on("click", function(e) {
+          if (!$(e.target).closest("#mainMenu, #mainMenu-trigger").length) {
+            if ($(window).width() <= 991) {
+              $("#mainMenu").slideUp();
+              $("#mainMenu-trigger").removeClass("active");
+            }
+          }
+        });
+        
+        // Handle window resize
+        $(window).on("resize", function() {
+          if ($(window).width() > 991) {
+            $("#mainMenu").show();
+            $("#mainMenu-trigger").removeClass("active");
+          } else {
+            $("#mainMenu").hide();
+            $("#mainMenu-trigger").removeClass("active");
+          }
+        });
+      });
+    </script>
 </body>
 
 </html>

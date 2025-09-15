@@ -47,52 +47,54 @@
           
 
           
+          <!--Navigation-->
+          <div id="mainMenu" class="menu-left menu-lowercase">
+            <div class="container">
+              <nav>
+                <ul>
+                  <li><a href="about.html">Quiénes somos</a></li>
+                  <li><a href="services.html">Nuestros Servicios</a></li>
+                  <li class="dropdown">
+                    <a href="index.html#obras" class="dropdown-toggle">Obras</a>
+                    <ul class="dropdown-menu">
+                      <li><a href="oficinas.html">OFICINAS</a></li>
+                      <li><a href="bancos.html">BANCOS</a></li>
+                      <li><a href="locales.html">LOCALES</a></li>
+                      <li><a href="desarrollos.html">DESARROLLOS INMOBILIARIOS</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="policies.html">Nuestras políticas</a></li>
+                  <li><a href="index.html#contacto">Contacto</a></li>
+                </ul>
+                
+                <!-- Mobile menu extras - Social icons and brochure button -->
+                <div class="mobile-menu-extras">
+                  <ul>
+                    <li class="">
+                      <a href="https://www.instagram.com/emprec.sa/" target="_blank">
+                        <img src="icons/0828 - iconos_ig gris.svg" width="35" alt="instagram">
+                      </a>
+                    </li>
+                    <li class="">
+                      <a href="https://www.linkedin.com/company/emprecsa" target="_blank">
+                        <img src="icons/0828 - iconos_lkn gris.svg" width="35" alt="linkedIn">
+                      </a>
+                    </li>
+                    <li>
+                      <button href="#" class="btn btn-rounded">
+                        <span>Brochure</span>
+                        <img src="icons/0828 - iconos_descargar.svg" width="20" alt="linkedIn">
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+              </nav>
+            </div>
+          </div>
+          <!--end: Navigation-->
+
           <!-- Desktop navigation wrapper -->
           <div class="desktop-nav-wrapper">
-            <div id="mainMenu" class="menu-left menu-lowercase">
-              <div class="container">
-                <nav>
-                  <ul>
-                    <li><a href="about.html">Quiénes somos</a></li>
-                    <li><a href="services.html">Nuestros Servicios</a></li>
-                    <li class="dropdown">
-                      <a href="index.html#obras" class="dropdown-toggle">Obras</a>
-                      <ul class="dropdown-menu">
-                        <li><a href="oficinas.html">OFICINAS</a></li>
-                        <li><a href="bancos.html">BANCOS</a></li>
-                        <li><a href="locales.html">LOCALES</a></li>
-                        <li><a href="desarrollos.html">DESARROLLOS INMOBILIARIOS</a></li>
-                      </ul>
-                    </li>
-                    <li><a href="policies.html">Nuestras políticas</a></li>
-                    <li><a href="index.html#contacto">Contacto</a></li>
-                  </ul>
-                  
-                  <!-- Mobile menu extras - Social icons and brochure button -->
-                  <div class="mobile-menu-extras">
-                    <ul>
-                      <li class="">
-                        <a href="https://www.instagram.com/emprec.sa/" target="_blank">
-                          <img src="icons/0828 - iconos_ig gris.svg" width="35" alt="instagram">
-                        </a>
-                      </li>
-                      <li class="">
-                        <a href="https://www.linkedin.com/company/emprecsa" target="_blank">
-                          <img src="icons/0828 - iconos_lkn gris.svg" width="35" alt="linkedIn">
-                        </a>
-                      </li>
-                      <li>
-                        <button href="#" class="btn btn-rounded">
-                          <span>Brochure</span>
-                          <img src="icons/0828 - iconos_descargar.svg" width="20" alt="linkedIn">
-                        </button>
-                      </li>
-                    </ul>
-                  </div>
-                </nav>
-              </div>
-            </div>
-            
             <!-- Desktop social icons and brochure -->
             <div class="header-extras">
               <ul>
@@ -1182,6 +1184,41 @@
     
     <script>
       $(document).ready(function() {
+        // Mobile menu toggle
+        $("#mainMenu-trigger").on("click", function() {
+          $("#mainMenu").slideToggle();
+          $(this).toggleClass("active");
+        });
+        
+        // Close mobile menu when clicking on a link
+        $("#mainMenu a").on("click", function() {
+          if ($(window).width() <= 991) {
+            $("#mainMenu").slideUp();
+            $("#mainMenu-trigger").removeClass("active");
+          }
+        });
+        
+        // Close mobile menu when clicking outside
+        $(document).on("click", function(e) {
+          if (!$(e.target).closest("#mainMenu, #mainMenu-trigger").length) {
+            if ($(window).width() <= 991) {
+              $("#mainMenu").slideUp();
+              $("#mainMenu-trigger").removeClass("active");
+            }
+          }
+        });
+        
+        // Handle window resize
+        $(window).on("resize", function() {
+          if ($(window).width() > 991) {
+            $("#mainMenu").show();
+            $("#mainMenu-trigger").removeClass("active");
+          } else {
+            $("#mainMenu").hide();
+            $("#mainMenu-trigger").removeClass("active");
+          }
+        });
+        
         // Handle dropdown menu on mobile and tablet
         $('.dropdown-toggle').on('click', function(e) {
           if ($(window).width() <= 991) {
