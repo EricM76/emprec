@@ -116,7 +116,15 @@
                   <ul>
                     <li><a href="about.html">Quiénes somos</a></li>
                     <li><a href="services.html">Nuestros Servicios</a></li>
-                    <li><a href="index.html#obras">Obras</a></li>
+                    <li class="dropdown">
+                      <a href="index.html#obras" class="dropdown-toggle">Obras</a>
+                      <ul class="dropdown-menu">
+                        <li><a href="oficinas.html">OFICINAS</a></li>
+                        <li><a href="bancos.html">BANCOS</a></li>
+                        <li><a href="locales.html">LOCALES</a></li>
+                        <li><a href="desarrollos.html">DESARROLLOS INMOBILIARIOS</a></li>
+                      </ul>
+                    </li>
                     <li><a href="policies.html">Nuestras políticas</a></li>
                     <li><a href="index.html#contacto">Contacto</a></li>
                   </ul>
@@ -400,7 +408,44 @@ Fecha de Contrato: Mayo 2017
 
     <!--Template functions-->
     <script src="js/functions.js"></script>
-
+    
+    <!--Dropdown Menu JavaScript-->
+    <script>
+      $(document).ready(function() {
+        // Handle dropdown menu on mobile and tablet
+        $('.dropdown-toggle').on('click', function(e) {
+          if ($(window).width() <= 991) {
+            e.preventDefault();
+            var $dropdown = $(this).closest('.dropdown');
+            var $menu = $(this).next('.dropdown-menu');
+            
+            // Close other open dropdowns
+            $('.dropdown').not($dropdown).removeClass('open');
+            $('.dropdown-menu').not($menu).removeClass('show');
+            
+            // Toggle current dropdown
+            $dropdown.toggleClass('open');
+            $menu.toggleClass('show');
+          }
+        });
+        
+        // Close dropdown when clicking outside
+        $(document).on('click', function(e) {
+          if (!$(e.target).closest('.dropdown').length) {
+            $('.dropdown').removeClass('open');
+            $('.dropdown-menu').removeClass('show');
+          }
+        });
+        
+        // Handle window resize
+        $(window).on('resize', function() {
+          if ($(window).width() > 991) {
+            $('.dropdown').removeClass('open');
+            $('.dropdown-menu').removeClass('show');
+          }
+        });
+      });
+    </script>
 </body>
 
 </html>
