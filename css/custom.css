@@ -1048,6 +1048,106 @@ section .heading-text.heading-section h3 {
   margin-left: 0px !important;
 }
 
+/* Team members - Align name box with photo bottom in all resolutions */
+.team-members .team-member {
+  position: relative !important; /* For absolute positioning of h3 */
+}
+
+.team-members .team-member .team-desc h3 {
+  position: absolute !important;
+  bottom: 102px !important; /* Align with bottom of photo */
+  right: 0px !important;
+  padding: 8px 8px 8px 20px !important;
+  margin: 0 !important;
+  width: 105% !important;
+  font-weight: 700 !important;
+  background-color: #545255 !important;
+  color: white !important;
+  font-size: 24px !important;
+}
+
+/* Team members layout - 4 per row starting from 1440px */
+@media (min-width: 1440px) {
+  .team-members {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: space-between !important;
+    margin: 0 !important;
+    gap: 0 !important;
+    padding-left: 80px !important;
+    padding-right: 80px !important;
+  }
+  
+  .team-members .team-member {
+    flex: 0 0 22% !important; /* 4 items per row with gaps */
+    max-width: 22% !important;
+    width: 22% !important; /* Override the 280px fixed width */
+    margin-bottom: 30px !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    position: relative !important; /* For absolute positioning of h3 */
+  }
+  
+  /* More specific override for team member width */
+  .row.team-members .team-member {
+    width: 22% !important;
+    max-width: 22% !important;
+    flex: 0 0 22% !important;
+  }
+  
+  /* Maximum specificity override */
+  #page-content .row.team-members .team-member {
+    width: 22% !important;
+    max-width: 22% !important;
+    flex: 0 0 22% !important;
+  }
+  
+  /* Add more space to the container */
+  #page-content .container-fluid {
+    padding-left: 100px !important;
+    padding-right: 100px !important;
+  }
+  
+  /* Ensure team member content is properly aligned */
+  .team-member .team-image {
+    text-align: center !important;
+    margin-bottom: 15px !important;
+  }
+  
+  .team-member .team-desc {
+    text-align: center !important;
+  }
+  
+  .team-members .team-member .team-desc h3 {
+    margin-bottom: 10px !important;
+    font-size: 20px !important; /* Reduced size for 1440px to fit long names */
+    position: absolute !important;
+    bottom: 102px !important; /* Align with bottom of photo */
+    right: 0px !important;
+    padding: 8px 8px 8px 20px !important;
+    margin: 0 !important;
+    width: 105% !important;
+    font-weight: 700 !important;
+    background-color: #545255 !important;
+    color: white !important;
+  }
+  
+  .team-member .team-desc p {
+    margin-bottom: 15px !important;
+    font-size: 20px !important; /* Reduced size for 1440px to fit long job titles */
+  }
+  
+  /* Maximum specificity override for 1440px+ */
+  #page-content .row.team-members .team-member .team-desc h3 {
+    font-size: 20px !important; /* Reduced size for 1440px to fit long names */
+  }
+  
+  #page-content .row.team-members .team-member .team-desc p {
+    font-size: 20px !important; /* Reduced size for 1440px to fit long job titles */
+  }
+}
+
+
 /* Footer Typography - Nunito Sans for all resolutions */
 #footer,
 #footer * {
