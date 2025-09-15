@@ -1880,4 +1880,10 @@ svg .cls-1 {
     min-height: 200px !important;
     padding: 54px 42px !important;
   }
+  
+  /* Más padding para el texto que acompaña el título "Ejes de trabajo" en mobile */
+  #politicas .heading-text.heading-section p {
+    padding: 20px 30px !important;
+    margin: 20px 0 !important;
+  }
 }
