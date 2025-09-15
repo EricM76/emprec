@@ -1148,6 +1148,42 @@ section .heading-text.heading-section h3 {
 }
 
 
+/* Services page titles - Uppercase for all resolutions */
+.services-page h2,
+.services-page h3 {
+  text-transform: uppercase !important;
+}
+
+/* Specific targeting for the services page titles */
+#page-content h2[style*="color: #d4191e"],
+#page-content h3[style*="color: #333"] {
+  text-transform: uppercase !important;
+}
+
+/* More specific targeting for services page */
+section#page-content h2,
+section#page-content h3 {
+  text-transform: uppercase !important;
+}
+
+/* Maximum specificity override for services page titles */
+section#page-content .text-content h2[style*="color: #d4191e"],
+section#page-content .text-content h3[style*="color: #333"] {
+  text-transform: uppercase !important;
+}
+
+/* Even more specific targeting */
+section#page-content .col-lg-7 .text-content h2,
+section#page-content .col-lg-7 .text-content h3 {
+  text-transform: uppercase !important;
+}
+
+/* Ultra specific targeting for services page */
+body section#page-content .container-fluid .row .col-lg-7 .text-content h2,
+body section#page-content .container-fluid .row .col-lg-7 .text-content h3 {
+  text-transform: uppercase !important;
+}
+
 /* Footer Typography - Nunito Sans for all resolutions */
 #footer,
 #footer * {
