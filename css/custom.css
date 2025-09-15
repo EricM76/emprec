@@ -95,6 +95,7 @@
     text-decoration: none !important;
     display: block !important;
     transition: background-color 0.3s ease !important;
+    text-transform: uppercase !important;
   }
   
   .dropdown-menu li a:hover {
@@ -115,8 +116,18 @@
     transition: transform 0.3s ease !important;
   }
   
+  /* Ensure dropdown toggle text is uppercase on mobile */
+  .dropdown-toggle {
+    text-transform: uppercase !important;
+  }
+  
   .dropdown.open .dropdown-toggle::after {
     transform: rotate(180deg) !important;
+  }
+  
+  /* Make all header menu items uppercase on mobile and tablet */
+  #header #mainMenu nav > ul > li > a {
+    text-transform: uppercase !important;
   }
 }
 
