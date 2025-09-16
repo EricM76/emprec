@@ -1036,7 +1036,7 @@
       $(document).ready(function() {
         // Handle dropdown menu on mobile and tablet
         $('.dropdown-toggle').on('click', function(e) {
-          if ($(window).width() <= 991 && !$(this).hasClass('dropdown-toggle')) {
+          if ($(window).width() <= 991) {
             e.preventDefault();
             var $dropdown = $(this).closest('.dropdown');
             var $menu = $(this).next('.dropdown-menu');
@@ -1053,7 +1053,7 @@
         
         // Also handle click on the entire dropdown li element for better UX
         $('.dropdown').on('click', function(e) {
-          if ($(window).width() <= 991 && !$(this).hasClass('dropdown-toggle')) {
+          if ($(window).width() <= 991) {
             var $dropdown = $(this);
             var $menu = $dropdown.find('.dropdown-menu');
             
@@ -1099,7 +1099,7 @@
         
         // Close mobile menu when clicking on a link (but not dropdown toggle)
         $("#mainMenu a").on("click", function() {
-          if ($(window).width() <= 991 && !$(this).hasClass('dropdown-toggle')) {
+          if ($(window).width() <= 991) {
             $("#mainMenu").slideUp();
             $("#mainMenu-trigger").removeClass("active");
           }
@@ -1108,7 +1108,7 @@
         // Close mobile menu when clicking outside
         $(document).on("click", function(e) {
           if (!$(e.target).closest("#mainMenu, #mainMenu-trigger, .dropdown").length) {
-            if ($(window).width() <= 991 && !$(this).hasClass('dropdown-toggle')) {
+            if ($(window).width() <= 991) {
               $("#mainMenu").slideUp();
               $("#mainMenu-trigger").removeClass("active");
             }
