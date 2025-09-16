@@ -174,9 +174,8 @@ sass scss/main.scss css/custom.css
 ## 📞 Soporte
 
 Para soporte técnico o consultas sobre el proyecto:
-- **Email**: admin@emprec.com.ar
-- **Teléfono Buenos Aires**: 011 7008 1092
-- **Teléfono Córdoba**: 3505331634
+- **Email**: menaericdaniel@gmail.com
+- **Teléfono Buenos Aires**: 011 3401 6800
 
 ## 📄 Licencia
 
