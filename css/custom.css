@@ -63,37 +63,54 @@
   color: #d4191e !important;
 }
 
-/* Mobile and Tablet dropdown styles - NEW APPROACH */
+/* Mobile and Tablet dropdown styles - ROBUST SOLUTION */
 @media (max-width: 991px) {
+  .dropdown {
+    position: relative !important;
+    width: 100% !important;
+  }
+  
   .dropdown-menu {
-    position: absolute !important;
-    top: 100% !important;
-    left: 0 !important;
-    right: 0 !important;
+    position: static !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
     opacity: 0 !important;
     visibility: hidden !important;
-    transform: translateY(-10px) !important;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15) !important;
-    border: 1px solid #e0e0e0 !important;
-    background-color: white !important;
-    margin-top: 5px !important;
+    transform: none !important;
+    box-shadow: none !important;
+    border: none !important;
+    background-color: #f8f9fa !important;
+    margin: 0 !important;
     max-height: 0 !important;
     overflow: hidden !important;
-    transition: all 0.3s ease !important;
+    transition: max-height 0.4s ease, opacity 0.4s ease !important;
     padding: 0 !important;
     z-index: 1000 !important;
+    width: 100% !important;
+    border-radius: 0 !important;
+    display: block !important;
   }
   
   .dropdown-menu.show {
     opacity: 1 !important;
     visibility: visible !important;
-    max-height: 300px !important;
-    padding: 10px 0 !important;
-    transform: translateY(0) !important;
+    max-height: 400px !important;
+    padding: 0 !important;
+    transform: none !important;
+    display: block !important;
+  }
+  
+  .dropdown-menu li {
+    display: block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    list-style: none !important;
   }
   
   .dropdown-menu li a {
-    padding: 12px 25px !important;
+    padding: 15px 25px !important;
     font-size: 14px !important;
     border-bottom: 1px solid #e0e0e0 !important;
     color: #333 !important;
@@ -101,6 +118,9 @@
     display: block !important;
     transition: background-color 0.3s ease !important;
     text-transform: uppercase !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    font-weight: 500 !important;
   }
   
   .dropdown-menu li a:hover {
@@ -124,6 +144,7 @@
   /* Ensure dropdown toggle text is uppercase on mobile */
   .dropdown-toggle {
     text-transform: uppercase !important;
+    position: relative !important;
   }
   
   .dropdown.open .dropdown-toggle::after {
@@ -133,6 +154,64 @@
   /* Make all header menu items uppercase on mobile and tablet */
   #header #mainMenu nav > ul > li > a {
     text-transform: uppercase !important;
+  }
+  
+  /* Force dropdown to be visible when open */
+  .dropdown.open .dropdown-menu {
+    opacity: 1 !important;
+    visibility: visible !important;
+    max-height: 400px !important;
+    display: block !important;
+  }
+  
+  /* Additional mobile dropdown fixes */
+  #mainMenu .dropdown {
+    position: relative !important;
+    width: 100% !important;
+  }
+  
+  #mainMenu .dropdown-menu {
+    position: static !important;
+    float: none !important;
+    width: 100% !important;
+    margin-top: 0 !important;
+    background-color: #f8f9fa !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+  
+  /* Ensure dropdown is clickable */
+  .dropdown-toggle {
+    cursor: pointer !important;
+    user-select: none !important;
+  }
+  
+  /* Clean styles - no debug colors */
+  
+  /* ULTRA SPECIFIC MOBILE DROPDOWN FIX */
+  #mainMenu .dropdown.open .dropdown-menu {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    max-height: 500px !important;
+    height: auto !important;
+    overflow: visible !important;
+    position: static !important;
+    transform: none !important;
+    background-color: #f8f9fa !important;
+    border: 1px solid #ddd !important;
+    margin-top: 5px !important;
+  }
+  
+  /* Force dropdown menu to be visible */
+  .dropdown-menu.show,
+  .dropdown.open .dropdown-menu {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    max-height: 500px !important;
+    height: auto !important;
+    overflow: visible !important;
   }
 }
 

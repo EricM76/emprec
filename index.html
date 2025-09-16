@@ -1031,28 +1031,40 @@
     <!--Template functions-->
     <script src="js/functions.js"></script>
     
-    <!--Dropdown Menu JavaScript-->
+    <!--Dropdown Menu JavaScript - ROBUST MOBILE SOLUTION-->
     <script>
       $(document).ready(function() {
-        // Handle dropdown menu - NEW APPROACH: Independent dropdown for mobile
-        $('.dropdown-toggle').on('click', function(e) {
-          e.preventDefault();
-          var $dropdown = $(this).closest('.dropdown');
-          var $menu = $(this).next('.dropdown-menu');
+        // Mobile dropdown handler - SPECIFIC SOLUTION
+        function initMobileDropdown() {
+          // Remove any existing handlers to avoid conflicts
+          $('.dropdown-toggle').off('click.mobileDropdown');
           
-          // Close other open dropdowns
-          $('.dropdown').not($dropdown).removeClass('open');
-          $('.dropdown-menu').not($menu).removeClass('show');
-          
-          // Toggle current dropdown
-          $dropdown.toggleClass('open');
-          $menu.toggleClass('show');
-          
-          // In mobile, don't close the main menu when dropdown is clicked
-          if ($(window).width() <= 991) {
-            e.stopPropagation(); // Prevent event bubbling to main menu
-          }
-        });
+          // Add new handler specifically for mobile dropdown
+          $('.dropdown-toggle').on('click.mobileDropdown', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            console.log('Dropdown clicked on mobile'); // Debug log
+            
+            var $dropdown = $(this).closest('.dropdown');
+            var $menu = $(this).next('.dropdown-menu');
+            
+            // Close other dropdowns
+            $('.dropdown').not($dropdown).removeClass('open');
+            $('.dropdown-menu').not($menu).removeClass('show');
+            
+            // Toggle current dropdown
+            $dropdown.toggleClass('open');
+            $menu.toggleClass('show');
+            
+            console.log('Dropdown toggled:', $dropdown.hasClass('open')); // Debug log
+            
+            return false; // Prevent any further event handling
+          });
+        }
+        
+        // Initialize mobile dropdown
+        initMobileDropdown();
         
         // Close dropdown when clicking outside
         $(document).on('click', function(e) {
@@ -1067,6 +1079,17 @@
           if ($(window).width() > 991) {
             $('.dropdown').removeClass('open');
             $('.dropdown-menu').removeClass('show');
+          } else {
+            // Re-initialize mobile dropdown on resize
+            initMobileDropdown();
+          }
+        });
+        
+        // Prevent dropdown links from closing the mobile menu
+        $('.dropdown-menu a').on('click', function(e) {
+          if ($(window).width() <= 991) {
+            // Allow the link to work normally, but don't close the main menu
+            e.stopPropagation();
           }
         });
       });
@@ -1079,9 +1102,18 @@
           $(this).toggleClass("active");
         });
         
-        // Close mobile menu when clicking on a link (but not dropdown toggle)
-        $("#mainMenu a").on("click", function() {
+        // Close mobile menu when clicking on a link (but not dropdown toggle or dropdown items)
+        $("#mainMenu a").on("click", function(e) {
           if ($(window).width() <= 991) {
+            // Don't close menu if it's a dropdown toggle
+            if ($(this).hasClass('dropdown-toggle')) {
+              return; // Let dropdown handler take care of it
+            }
+            // Don't close menu if it's inside a dropdown menu
+            if ($(this).closest('.dropdown-menu').length > 0) {
+              return; // Let dropdown links work normally
+            }
+            // Close menu for regular navigation links
             $("#mainMenu").slideUp();
             $("#mainMenu-trigger").removeClass("active");
           }
@@ -1089,10 +1121,13 @@
         
         // Close mobile menu when clicking outside
         $(document).on("click", function(e) {
-          if (!$(e.target).closest("#mainMenu, #mainMenu-trigger, .dropdown").length) {
+          if (!$(e.target).closest("#mainMenu, #mainMenu-trigger").length) {
             if ($(window).width() <= 991) {
               $("#mainMenu").slideUp();
               $("#mainMenu-trigger").removeClass("active");
+              // Also close any open dropdowns
+              $('.dropdown').removeClass('open');
+              $('.dropdown-menu').removeClass('show');
             }
           }
         });
@@ -1102,6 +1137,9 @@
           if ($(window).width() > 991) {
             $("#mainMenu").show();
             $("#mainMenu-trigger").removeClass("active");
+            // Close any open dropdowns on desktop
+            $('.dropdown').removeClass('open');
+            $('.dropdown-menu').removeClass('show');
           } else {
             $("#mainMenu").hide();
             $("#mainMenu-trigger").removeClass("active");
@@ -1109,5 +1147,8 @@
         });
       });
     </script>
+    
+    <!-- Mobile Dropdown Fix -->
+    <script src="js/mobile-dropdown.js"></script>
   </body>
 </html>
