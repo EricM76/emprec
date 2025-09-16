@@ -518,28 +518,66 @@
         });
       });
     </script>
+    
+    
+        
+    <!-- Mobile Dropdown Fix -->
+    <script src="js/mobile-dropdown.js"></script>
     <script>
       $(document).ready(function() {
-        // Mobile menu toggle
-        $("#mainMenu-trigger").on("click", function() {
-          $("#mainMenu").slideToggle();
-          $(this).toggleClass("active");
+        // Mobile menu toggle - ROBUST VERSION WITH PROPER STATE MANAGEMENT
+        $("#mainMenu-trigger").on("click", function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          
+          var $menu = $("#mainMenu");
+          var $linesButton = $(this).find('.lines-button');
+          
+          // Check current state and toggle accordingly
+          if ($menu.is(':visible')) {
+            // Menu is open, close it
+            $menu.slideUp();
+            $linesButton.removeClass('x toggle-active');
+          } else {
+            // Menu is closed, open it
+            $menu.slideDown();
+            $linesButton.addClass('x toggle-active');
+          }
+          
+          return false;
         });
         
-        // Close mobile menu when clicking on a link
-        $("#mainMenu a").on("click", function() {
+        // Close mobile menu when clicking on regular links
+        $("#mainMenu a").on("click", function(e) {
           if ($(window).width() <= 991) {
+            // Don't close menu if it's a dropdown toggle
+            if ($(this).hasClass('dropdown-toggle')) {
+              return;
+            }
+            // Don't close menu if it's inside a dropdown menu
+            if ($(this).closest('.dropdown-menu').length > 0) {
+              return;
+            }
+            // Close menu for regular navigation links
             $("#mainMenu").slideUp();
-            $("#mainMenu-trigger").removeClass("active");
+            $("#mainMenu-trigger .lines-button").removeClass("x toggle-active");
           }
         });
         
-        // Close mobile menu when clicking outside
+        // Close mobile menu when clicking outside - ROBUST VERSION
         $(document).on("click", function(e) {
-          if (!$(e.target).closest("#mainMenu, #mainMenu-trigger, .dropdown").length) {
+          var $target = $(e.target);
+          
+          // Check if click is outside menu and trigger
+          if (!$target.closest("#mainMenu, #mainMenu-trigger").length) {
             if ($(window).width() <= 991) {
-              $("#mainMenu").slideUp();
-              $("#mainMenu-trigger").removeClass("active");
+              // Force close menu and reset all states
+              $("#mainMenu").hide().removeAttr('style'); // Remove any inline styles
+              $("#mainMenu-trigger .lines-button").removeClass("x toggle-active");
+              
+              // Also close any open dropdowns
+              $('.dropdown').removeClass('open');
+              $('.dropdown-menu').removeClass('show');
             }
           }
         });
@@ -547,19 +585,21 @@
         // Handle window resize
         $(window).on("resize", function() {
           if ($(window).width() > 991) {
-            $("#mainMenu").show();
-            $("#mainMenu-trigger").removeClass("active");
+            $("#mainMenu").show().removeAttr('style');
+            $("#mainMenu-trigger .lines-button").removeClass("x toggle-active");
+            $('.dropdown').removeClass('open');
+            $('.dropdown-menu').removeClass('show');
           } else {
-            $("#mainMenu").hide();
-            $("#mainMenu-trigger").removeClass("active");
+            $("#mainMenu").hide().removeAttr('style');
+            $("#mainMenu-trigger .lines-button").removeClass("x toggle-active");
           }
         });
       });
     </script>
-    
-    <!-- Mobile Dropdown Fix -->
-    <script src="js/mobile-dropdown.js"></script>
-</body>
+  </body>
 
 </html>
+
+
+
 

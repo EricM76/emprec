@@ -27,14 +27,6 @@ This script ensures dropdown menus work correctly on mobile devices
                     
                     return false;
                 });
-                
-                // Close dropdown when clicking outside
-                document.addEventListener('click', function(e) {
-                    if (!dropdown.contains(e.target)) {
-                        dropdown.classList.remove('open');
-                        dropdownMenu.classList.remove('show');
-                    }
-                });
             }
         }, 2000); // Wait 2 seconds
     });
@@ -83,15 +75,18 @@ This script ensures dropdown menus work correctly on mobile devices
                 });
             });
             
-            // Close dropdowns when clicking outside
+            // Close dropdowns when clicking outside (but don't interfere with hamburger menu)
             document.addEventListener('click', function(e) {
                 var clickedInsideDropdown = false;
+                
+                // Check if clicked inside dropdown
                 dropdowns.forEach(function(dropdown) {
                     if (dropdown.contains(e.target)) {
                         clickedInsideDropdown = true;
                     }
                 });
                 
+                // Only close dropdowns if clicked outside
                 if (!clickedInsideDropdown) {
                     dropdowns.forEach(function(dropdown) {
                         dropdown.classList.remove('open');
