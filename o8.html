@@ -497,43 +497,25 @@
     <!--Dropdown Menu JavaScript-->
     <script>
       $(document).ready(function() {
-        // Handle dropdown menu on mobile and tablet
+        // Handle dropdown menu - NEW APPROACH: Independent dropdown for mobile
         $('.dropdown-toggle').on('click', function(e) {
+          e.preventDefault();
+          var $dropdown = $(this).closest('.dropdown');
+          var $menu = $(this).next('.dropdown-menu');
+          
+          // Close other open dropdowns
+          $('.dropdown').not($dropdown).removeClass('open');
+          $('.dropdown-menu').not($menu).removeClass('show');
+          
+          // Toggle current dropdown
+          $dropdown.toggleClass('open');
+          $menu.toggleClass('show');
+          
+          // In mobile, don't close the main menu when dropdown is clicked
           if ($(window).width() <= 991) {
-            e.preventDefault();
-            var $dropdown = $(this).closest('.dropdown');
-            var $menu = $(this).next('.dropdown-menu');
-            
-            // Close other open dropdowns
-            $('.dropdown').not($dropdown).removeClass('open');
-            $('.dropdown-menu').not($menu).removeClass('show');
-            
-            // Toggle current dropdown
-            $dropdown.toggleClass('open');
-            $menu.toggleClass('show');
+            e.stopPropagation(); // Prevent event bubbling to main menu
           }
-        });
-        
-        // Also handle click on the entire dropdown li element for better UX
-        $('.dropdown').on('click', function(e) {
-          if ($(window).width() <= 991) {
-            var $dropdown = $(this);
-            var $menu = $dropdown.find('.dropdown-menu');
-            
-            // Only prevent default if clicking on the dropdown itself, not on links inside
-            if (!$(e.target).is('a')) {
-              e.preventDefault();
-              
-              // Close other open dropdowns
-              $('.dropdown').not($dropdown).removeClass('open');
-              $('.dropdown-menu').not($menu).removeClass('show');
-              
-              // Toggle current dropdown
-              $dropdown.toggleClass('open');
-              $menu.toggleClass('show');
-            }
-          }
-        });
+        });        
         
         // Close dropdown when clicking outside
         $(document).on('click', function(e) {
